@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // Find our View instances
         timeTextView = findViewById(R.id.time_textview);
         timeButton = findViewById(R.id.time_button);
@@ -44,22 +43,30 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
                 The sample app is reusing them because it is useful when looking for regressions
                 during testing
                  */
-                if (timePickerDialog == null) {
-                    timePickerDialog = TimePickerDialog.newInstance(
-                            MainActivity.this,
-                            now.get(Calendar.HOUR_OF_DAY),
-                            now.get(Calendar.MINUTE),
-                            false
-                    );
-                } else {
-                    timePickerDialog.initialize(
-                            MainActivity.this,
-                            now.get(Calendar.HOUR_OF_DAY),
-                            now.get(Calendar.MINUTE),
-                            now.get(Calendar.SECOND),
-                            false
-                    );
-                }
+//                if (timePickerDialog == null) {
+//                    timePickerDialog = TimePickerDialog.newInstance(
+//                            MainActivity.this,
+//                            now.get(Calendar.HOUR_OF_DAY),
+//                            now.get(Calendar.MINUTE),
+//                            false
+//                    );
+//                } else {
+//                    timePickerDialog.initialize(
+//                            MainActivity.this,
+//                            now.get(Calendar.HOUR_OF_DAY),
+//                            now.get(Calendar.MINUTE),
+//                            now.get(Calendar.SECOND),
+//                            false
+//                    );
+//                }
+
+                timePickerDialog = TimePickerDialog.newInstance(
+                        MainActivity.this,
+                        now.get(Calendar.HOUR_OF_DAY),
+                        now.get(Calendar.MINUTE),
+                        false
+                );
+
 
                 timePickerDialog.setThemeDark(false);
                 timePickerDialog.setTitle("TimePicker Title");
